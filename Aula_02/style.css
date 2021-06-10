@@ -1,0 +1,18 @@
+
+body{
+    background-color: darkred;
+}
+a{
+    background-color: forestgreen;
+}
+
+.cabecalho{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: darksalmon;
+}
+#item{
+    color: darkslategray;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+}
