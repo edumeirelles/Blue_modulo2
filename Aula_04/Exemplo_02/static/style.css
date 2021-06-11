@@ -1,0 +1,59 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.titulo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.bloco{
+    
+    width: 97%;
+    margin: auto;
+    height: auto;
+    background-color: blue;
+    border-radius: 15px;
+    padding: 10px;    
+    padding-bottom: 20px;
+}
+.titulo_bloco{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.conteudo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+.agenda{
+    
+    background-color: rgba(255, 238, 0, 0.788);
+    border-radius: 5px;
+    border-style: double;
+    padding: 10px;
+    width: 35%;
+}
+.lista{
+    background-color: rgba(255, 0, 200, 0.788);
+    border-radius: 5px;
+    border-style: double;
+    padding: 10px; 
+    width: 35%;
+}
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+th{
+    text-align: left;
+}
+td{
+    text-align: center;
+}
