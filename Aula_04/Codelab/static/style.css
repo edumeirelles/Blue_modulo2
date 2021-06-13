@@ -3,12 +3,24 @@ body{
     font-size: larger;
 }
 
-.nome{
+.bloco{
     display:flex;
-    height: auto;
     flex-direction: column;
-    justify-content: space-around;
+    background-color: gray;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 10%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 10px gray;
+
 }
 .estado{
     font-size: larger;
+}
+
+.imagem{
+    display: flex;
+    justify-content: center;
+    padding: 10px;    
 }

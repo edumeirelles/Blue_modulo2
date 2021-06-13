@@ -6,25 +6,21 @@
         <link rel="stylesheet" type="text/css" href="/static/style.css">
     </head>
     <body>
-        <div class="nome">
+        <div class="bloco">
             <div><b>Nome:</b> {{nome}}</div>
-            <br/>
             <div><b>Idade:</b> {{idade}}</div>
-            <br/>
             <div><b>Nascimento:</b> {{cidade}}</div>
-            <br/>
-        </div>
-        <div>
-            {% if estado == "doido" %}
-            <img src="{{imagem1}}" height="200px" alt="Einstein1">
-            {% elif estado == "pensativo" %}
-            <img src="{{imagem2}}" height="200px" alt="Einstein2"> 
-            {% else %}
-            <img src="{{imagem3}}" height="200px" alt="Einstein3">
-            {% endif %}
-        </div>
-        <br/>
-        <div class="estado">Betão tá {{estado}}!</div>
         
+            <div class="imagem">
+                {% if estado == "doido" %}
+                <img src="{{imagem1}}" height="200px" alt="Einstein1">
+                {% elif estado == "pensativo" %}
+                <img src="{{imagem2}}" height="200px" alt="Einstein2"> 
+                {% else %}
+                <img src="{{imagem3}}" height="200px" alt="Einstein3">
+                {% endif %}
+            </div>
+            <div class="estado">Betão tá {{estado}}!</div>
+        </div>
     </body>
 </html>
