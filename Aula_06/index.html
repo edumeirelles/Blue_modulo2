@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            Formulário - Blue
+        </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <form action="" method="POST">
+        <h1 style="font-size: larger;">Formulário de cadastro:</h1>
+        <div>
+            <label for="nome">Nome:</label><input type="text" name="nome" id="nome" placeholder="Digite seu nome"/><br />
+        </div>
+        <div>
+            <label for="senha">Senha:</label><input type="password" name="senha" id="senha" placeholder="Digite sua senha"/><br />
+        </div>
+        <div>Gênero: <br/>
+            <input type="radio" name="opcao-unica" value="m" id="m"/><label for="m">Masculino</label>
+            <input type="radio" name="opcao-unica" value="f" id="f"/><label for="f">Feminino</label>
+            <input type="radio" name="opcao-unica" value="o" id="o"/><label for="o">Outro</label>
+        </div>
+        <div>
+            <label for="check">Deseja receber e-mails com novidade?</label><input type="checkbox" name="opcao_multipla" id="check"/><br />
+        </div>
+        <div>
+            <label for="data">Data:</label><input type="date" name="data" id="data" /><br />
+        </div>
+        <div>
+            <label for="cidade">Selecione sua cidade: </label><select name="cidade" id="cidade">
+                <option disabled selected>Selecione a cidade</option>
+                <optgroup label="Sul">
+                    <option>Curitiba</option>
+                    <option>Porto Alegre</option>
+                </optgroup> 
+                <optgroup label="Sudeste">
+                    <option>São Paulo</option>
+                    <option>Rio de Janeiro</option>
+                </optgroup>
+                <optgroup label="Nordeste">
+                    <option>Salvador</option>
+                    <option>Recife</option>
+                </optgroup>
+                <optgroup label="centro-oeste">
+                    <option>Cuiabá</option>
+                    <option>Goiânia</option>
+                </optgroup>
+                <optgroup label="Norte">
+                    <option>Manaus</option>
+                    <option>Porto Velho</option>
+                </optgroup>
+          </select>
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+        </form>
+    </body>
+</html>
