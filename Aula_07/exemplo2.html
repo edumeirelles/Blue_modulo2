@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function altera(){
+            const elemento1 = this.document.getElementById('botao')
+            const elemento2 = this.document.getElementsByClassName('classe1')
+            if (elemento1.innerText == "Texto mudou") { 
+                for (const elemento of elemento2){
+                    elemento.innerHTML = "mudando <b>innerHTML</b>"
+                }
+                elemento2[0].innerHTML = "este é diferente"
+                elemento1.innerText = "Texto voltou";
+                this.document.bgColor = "#62e581";
+            } 
+            else {
+                for (const elemento of elemento2){
+                    elemento.innerHTML = "mudando <b>innerHTML</b> de volta"
+                }
+                elemento2[1].innerHTML = "este é diferente"
+                elemento1.innerText = "Texto mudou";
+                document.bgColor = "#db9090";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id=botao onclick="altera()">Valor normal</button>
+    
+    <div style="padding: 10px" class="classe1">Div 1 com classe 1</div>
+    <div style="padding: 10px" class="classe1">Div 2 com classe 1</div>
+    <div style="padding: 10px" class="classe1">Div 3 com classe 1</div>
+</body>
+</html>
