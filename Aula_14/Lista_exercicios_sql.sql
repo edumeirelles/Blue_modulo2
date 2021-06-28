@@ -8,7 +8,7 @@ SELECT DISTINCT l.cidade FROM lojas l
 
 SELECT f.nome, f.sobrenome, f.email, l.cidade, l.pais, l.telefone 
 FROM funcionarios f JOIN lojas l 
-ON f.cargo ='President' AND f.codloja = l.codloja 
+ON f.cargo ='President' WHERE f.codloja = l.codloja 
 
 SELECT * FROM produtos p ORDER BY precosugerido DESC LIMIT 1
 
