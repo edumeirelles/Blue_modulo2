@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Blue - HTML, CSS, JS, Python e SQL</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <div class="bloco">
+        <h1>{{registro.nome}}</h1>
+    </div>
+    
+    <div class="bloco single">
+        <div>
+            <img src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" height="400" width="400" />
+        </div>
+        <div class="tabela_single">
+            <table>
+                {% for i in tabela %}
+                    {% for k,v in i.items() %}
+                        <tr>
+                            <td>{{v}}:</td><td>{{registro[k]}}</td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </table>
+        </div> 
+    </div>
+    <div class="bloco bio">
+        <h2>Biografia</h2>
+        <p>{{ registro.bio }}</p>
+    </div>
+</body>
+</html>

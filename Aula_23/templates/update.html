@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatísticas Formula 1</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+    {% include 'header.html' %}
+    
+    {% if not sucesso %}
+
+    <div class="bloco">
+        <h2>Editar Registro {{registro.nome}}</h2>
+    </div>
+    
+    <div class="bloco"> 
+        <form action="" method="POST">
+            <div class="formulario">
+                {% for i in labels %}
+                    {% for k,v in i.items() %}
+                    <div class="item_form">  
+                        <div>
+                            <label for="{{k}}">{{v}} </label>
+                        </div>
+                        <div>
+                            {% if k != 'bio' %}
+                            <input type="text" name="{{k}}" id="{{k}}" value="{{registro[k]}}"/>
+                            {% else %}
+                            <textarea name="{{k}}" id="{{k}}" cols="30" rows="10">{{registro[k]}}</textarea>
+                            {% endif %}
+                        </div>
+                    </div> 
+                    {% endfor %}
+                {% endfor %}        
+            </div> 
+            <input type="submit" value="Enviar Dados" class="botao" style="width: 170px;"/>           
+        </form>
+    </div>
+
+    {% else %}
+
+    <div class="bloco sucesso">
+        <p>Registro ediatdo com sucesso!</p>
+    </div>
+
+    <div class="bloco">
+        <a href="/read/{{ registro.id }}" class="botao">Visualizar esse registro</a>
+    </div>
+
+    {% endif %}     
+</body>
+</html>

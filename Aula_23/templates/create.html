@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatísticas Formula 1</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+    {% include 'header.html' %}
+    
+    <div class="bloco">
+        <h2>Criar Registros</h2>
+    </div>
+        
+    {% if not id_atribuido %}
+      
+    <div class="bloco">
+        <form action="" method="POST">
+            <div class="formulario">
+                {% for i in labels %}
+                    {% for k,v in i.items() %}
+                    <div class="item_form">  
+                        <div>
+                            <label for="{{k}}">{{v}} </label>
+                        </div>
+                        <div>
+                            {% if k != 'bio' %}
+                            <input type="text" name="{{k}}" id="{{k}}"/>
+                            {% else %}
+                            <textarea name="{{k}}" id="{{k}}" cols="30" rows="10"></textarea>
+                            {% endif %}
+                        </div>
+                    </div> 
+                    {% endfor %}
+                {% endfor %}        
+            </div> 
+            <input type="submit" value="Enviar Dados" class="botao" style="width: 170px;"/>           
+        </form>
+    </div>
+    
+    {% else %}
+
+    <div class="bloco">
+        <p>
+            Registro criado com sucesso!<br /><br />
+            O ID atribuído foi <span class="botao">{{ id_atribuido }}</span><br /><br />
+            <a href="/read/{{ id_atribuido }}" class="botao">Visualizar esse registro</a>
+        </p>
+    </div>
+
+    {% endif %}  
+</body>
+</html>
