@@ -73,8 +73,10 @@ def index():
 
 @app.route('/read')
 def read_all():
+    tags = [{'id':'ID','nome':'Nome','vitorias':'Vitórias','poles':'Pole-positions','pontos':'Pontos','podiums':'Podiums','campeonatos':'Títulos','imagem_url':'Imagem','acoes':'Ações'}]
     registros = Formula1.read_all()
-    return render_template('read_all.html', registros=registros)
+    print(tags)
+    return render_template('read_all.html', registros=registros, tags=tags)
 
 @app.route("/read/<registro_id>")
 def read_id(registro_id):

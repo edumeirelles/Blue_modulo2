@@ -15,30 +15,24 @@
     </div>
 
     <div class="bloco">
-        <table class="tabela">
+        <table class="tabela"> 
             <tr class="tabela_header">
-                <td>ID</td>
-                <td>Nome</td>
-                <td>Vitórias</td>
-                <td>Pole-positions</td>
-                <td>Pontos</td>
-                <td>Podiums</td>
-                <td>Títulos</td>
-                <td>Imagem</td>
-                <td>Ações</td>
+                {% for i in tags %}
+                    {% for k,v in i.items() %}
+                        <td>{{v}}</td>
+                    {% endfor %}
+                {% endfor %}
             </tr>
-
-            {% for registro in registros %}
-
+            {% for registro in registros %} 
             <tr>
-                <td>{{ registro["id"] }}</td>
-                <td>{{ registro["nome"] }}</td>
-                <td>{{ registro["vitorias"] }}</td>
-                <td>{{ registro["poles"] }}</td>
-                <td>{{ registro["pontos"] }}</td>
-                <td>{{ registro["podiums"] }}</td>
-                <td>{{ registro["campeonatos"] }}</td>
-                <td><a href="/read/{{ registro['id'] }}"><img class="imagem_piloto" src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}"  /></a></td>
+                {% for i in tags %}
+                    {% for k,v in i.items() %}
+                        {% if k!= 'acoes' and k!= 'imagem_url'%} 
+                            <td>{{ registro[k] }}</td>
+                        {% endif %}    
+                    {% endfor %}
+                <td><a href="/read/{{ registro['id'] }}"><img class="imagem_piloto" src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}"  /></a></td>   
+                {% endfor %} 
                 <td>
                     <div class="botoes">
                         <a href="/read/{{ registro['id'] }}" class="botao">Visualizar</a>
@@ -46,10 +40,7 @@
                         <a href="/delete/{{ registro['id'] }}" class="botao">Remover</a>
                     </div>
                 </td>
-                
-
             </tr>
-
             {% endfor %}
         </table>
     </div>
