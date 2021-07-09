@@ -1,7 +1,6 @@
-from logging import error
 from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug.utils import validate_arguments
+
 
 app = Flask(__name__)
 
@@ -75,7 +74,6 @@ def index():
 def read_all():
     tags = [{'id':'ID','nome':'Nome','vitorias':'Vitórias','poles':'Pole-positions','pontos':'Pontos','podiums':'Podiums','campeonatos':'Títulos','imagem_url':'Imagem','acoes':'Ações'}]
     registros = Formula1.read_all()
-    print(tags)
     return render_template('read_all.html', registros=registros, tags=tags)
 
 @app.route("/read/<registro_id>")
@@ -89,6 +87,7 @@ def create():
 
     id_atribuido = None
     erro = "Preencha todos os campos"
+    
     labels = [{'nome':'Nome do piloto:','vitorias':'Número de vitórias do piloto:','poles':'Número de pole-positions do piloto:','gp_disputados':'Número de GPs disputados:','pontos':'Número de pontos do piloto:','podiums':'Número de podiums do piloto:','campeonatos':'Número de Títulos do piloto:','bio':'Biografia:','imagem_url':'URL da imagem:'}]
     
     if request.method == 'POST':
